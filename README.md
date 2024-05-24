@@ -1,2 +1,6 @@
-# programacao_web_2
-Repositório para atividades do Segundo Bimestre da matéria Programação Web
+# Programação Web - Segundo Bimestre
+
+**Aluno:** Diogo Tizolim Cedran
+**R.A.:** 22014212-2
+
+**Github Pages:** https://diogo-cedran.github.io/
