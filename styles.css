@@ -21,7 +21,7 @@ td {
 /* Estilos gerais */
 
 body {
-  font-family: "Arial", sans-serif;
+  font-family: 'Arial', sans-serif;
   color: #333;
   background-color: #f4f4f4;
   height: 100vh;
@@ -172,7 +172,7 @@ nav a:hover {
 }
 
 #curiosidades li::marker {
-  content: "🔍";
+  content: '🔍';
 }
 
 #curiosidades ul {
@@ -225,12 +225,12 @@ footer a {
   transition: opacity 0.3s ease-in-out;
 }
 
-a[target="_blank"] {
+a[target='_blank'] {
   color: #4592c4;
   font-weight: bold;
 }
 
-a[target="_blank"]:hover {
+a[target='_blank']:hover {
   opacity: 0.8;
 }
 
@@ -256,15 +256,15 @@ footer a {
   text-decoration: none;
 }
 
-footer a[href*="#"] {
+footer a[href*='#'] {
   color: white;
 }
 
-footer a[href*="mailto"] {
+footer a[href*='mailto'] {
   color: orangered;
 }
 
-footer a[href*="tel"] {
+footer a[href*='tel'] {
   color: limegreen;
 }
 

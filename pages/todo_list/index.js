@@ -13,9 +13,13 @@ window.addEventListener("DOMContentLoaded", () => {
       <p>${task.description}</p>
     `;
 
+    li.id = task.id;
+
     const editButton = createEditButton(task);
+    const deleteButton = createDeleteButton(task);
 
     li.appendChild(editButton);
+    li.appendChild(deleteButton);
     taskList.appendChild(li);
   });
 });
@@ -48,8 +52,10 @@ function addTask(event) {
   `;
 
   const editButton = createEditButton(task);
+  const deleteButton = createDeleteButton(task);
 
   li.appendChild(editButton);
+  li.appendChild(deleteButton);
   taskList.appendChild(li);
   saveTask(task);
   form.reset();
@@ -130,4 +136,32 @@ function createEditButton(task) {
   };
 
   return editButton;
+}
+
+// Função para criar botão de exclusão
+function createDeleteButton(task) {
+  const deleteButton = document.createElement("button");
+
+  deleteButton.innerHTML = "❌";
+  deleteButton.title = "Excluir tarefa";
+  deleteButton.className = "delete-button";
+
+  deleteButton.onclick = () => {
+    const tasks = JSON.parse(localStorage.getItem(taskKey)) || [];
+
+    const updatedTasks = tasks.filter((t) => t.id !== task.id);
+
+    localStorage.setItem(taskKey, JSON.stringify(updatedTasks));
+
+    const taskList = document.querySelector("#taskList");
+    const taskElement = document.getElementById(task.id);
+
+    console.log(taskElement);
+
+    if (taskElement) {
+      taskList.removeChild(taskElement);
+    }
+  };
+
+  return deleteButton;
 }
